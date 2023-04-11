@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 
 const artworks = [
-  { name: 'The Creation of Adam', image: '/creation.jpg' },
+  { name: 'The Creation of Adam', image: '/public/creation.jpg' },
   { name: 'Starry Night', image: 'path/to/starry_night.jpg' },
   { name: 'Mona Lisa', image: 'path/to/mona_lisa.jpg' },
   { name: 'The Persistence of Memory', image: 'path/to/persistence_of_memory.jpg' },
