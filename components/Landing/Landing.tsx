@@ -44,7 +44,7 @@ export const Landing = () => {
           <div key={artwork.name} className="m-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
             <div className="bg-white rounded-md shadow-md">
               <img
-                src={artwork.image}
+                src="https://cdn.shopify.com/s/files/1/0336/2701/3259/articles/Michelangelo_the_creation_of_adam_meaning_f356496b-ef77-4759-bc81-f23e864cf2b4.jpg?v=1663084517"
                 alt={artwork.name}
                 className="w-full h-auto rounded-t-md cursor-pointer"
                 onClick={() => handleArtworkClick(artwork)}
@@ -63,7 +63,7 @@ export const Landing = () => {
             <button className="absolute top-4 right-4 text-gray-600" onClick={handleCloseModal}>
               X
             </button>
-            <img src={selectedArtwork.image} alt={selectedArtwork.name} className="w-full h-auto" />
+            <img src="https://cdn.shopify.com/s/files/1/0336/2701/3259/articles/Michelangelo_the_creation_of_adam_meaning_f356496b-ef77-4759-bc81-f23e864cf2b4.jpg?v=1663084517" alt={selectedArtwork.name} className="w-full h-auto" />
           </div>
         </div>
       )}
