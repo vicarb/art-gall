@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 const artworks = [
   { name: 'The Creation of Adam', image: '/creation.jpg' },
@@ -11,24 +12,27 @@ const artworks = [
   { name: 'Girl with a Pearl Earring', image: 'path/to/girl_with_pearl_earring.jpg' }
 ];
 
-export const Landing = () => {
+type Artwork = {
+    name: string;
+    image: string;
+    description?: string;
+  };
+  export const Landing = () => {
     return (
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', margin: '20px 0' }}>
-          <div style={{ width: '100%', maxWidth: '600px' }}>
-            <h1 style={{ textAlign: 'center', fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>Discover Famous Artwork</h1>
-            <img src={artworks[0].image} alt={artworks[0].name} style={{ width: '100%', height: 'auto', borderRadius: '5px' }} />
-            <div style={{ padding: '10px', backgroundColor: 'white', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', borderRadius: '5px', marginTop: '10px' }}>
-              <p style={{ fontSize: '16px', fontWeight: 'bold', margin: '0' }}>{artworks[0].name}</p>
-            </div>
-          </div>
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold text-sky mb-8">Welcome to our Art Collection</h1>
+        <div className="w-full md:w-3/4 lg:w-1/2">
+          <Image src={artworks[0].image} alt={artworks[0].name} width={1200} height={800} layout="responsive" className="w-full h-auto mb-8" />
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {artworks.slice(1, 9).map((artwork, index) => (
-            <div key={artwork.name} style={{ margin: '10px', width: '90%', maxWidth: '300px', backgroundColor: 'white', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', borderRadius: '5px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <img src={index === 0 ? artwork.image : artwork.thumbnail} alt={artwork.name} style={{ width: '100%', height: 'auto', borderRadius: '5px 5px 0 0' }} />
-              <div style={{ padding: '10px', width: '100%', backgroundColor: 'white', borderRadius: '0 0 5px 5px' }}>
-                <p style={{ fontSize: '14px', fontWeight: 'bold', margin: '0' }}>{artwork.name}</p>
+        <div className="flex flex-wrap justify-center">
+          {artworks.slice(1, 9).map((artwork: Artwork) => (
+            <div key={artwork.name} className="m-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
+              <div className="bg-white rounded-md shadow-md">
+                <Image src={artwork.image} alt={artwork.name} width={500} height={500} layout="responsive" className="w-full h-auto rounded-t-md" />
+                <div className="p-4">
+                  <h2 className="text-lg font-bold text-gray-800 mb-2">{artwork.name}</h2>
+                  <p className="text-gray-600">{artwork.description}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -36,4 +40,3 @@ export const Landing = () => {
       </div>
     );
   };
-  
