@@ -36,12 +36,13 @@ const Landing = () => {
     setSelectedImage('');
   };
 
+
+  
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-sky mb-8">Welcome to our Art Collection</h1>
       <div className="w-full md:w-3/4 lg:w-1/2">
         <button onClick={() => handleImageClick(artworks[0].image)}>
-          <Image src="https://cdn.shopify.com/s/files/1/0336/2701/3259/articles/Michelangelo_the_creation_of_adam_meaning_f356496b-ef77-4759-bc81-f23e864cf2b4.jpg?v=1663084517" alt={artworks[0].name} width={1200} height={800} layout="responsive" className="w-full h-auto mb-8" />
         </button>
       </div>
       <div className="flex flex-wrap justify-center">
