@@ -37,7 +37,6 @@ const Landing = () => {
   };
 
 
-  
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-sky mb-8">Welcome to our Art Collection</h1>
@@ -65,7 +64,7 @@ const Landing = () => {
           <button onClick={handleImageClose} className="absolute top-5 right-5 text-white">
             <FaTimes size={32} />
           </button>
-          <Image src={selectedImage} alt="Selected Artwork" layout="responsive" width={1200} height={800} />
+          <Image src={selectedImage} alt="Selected Artwork" layout="intrinsic" width={1200} height={800} />
         </div>
       )}
     </div>
