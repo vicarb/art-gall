@@ -61,13 +61,14 @@ const Landing = () => {
           </div>
         ))}
       </div>
-      {showImage && (
+
+      {showImage && selectedArtwork && (
         <div className="fixed top-0 left-0 h-screen w-screen flex justify-center items-center bg-black bg-opacity-80" onClick={handleImageClose}>
           <button onClick={handleImageClose} className="absolute top-5 right-5 text-white">
             <FaTimes size={32} />
           </button>
           <div className="flex flex-col items-center">
-            <Image src="https://thumbs.dreamstime.com/b/sculpture-pieta-lamentation-christ-michelangelo-buonarroti-pushkin-museum-moscow-russia-july-191390304.jpg" alt="Selected Artwork" layout="intrinsic" width={1200} height={800} />
+          <Image src="https://thumbs.dreamstime.com/b/sculpture-pieta-lamentation-christ-michelangelo-buonarroti-pushkin-museum-moscow-russia-july-191390304.jpg" alt="Selected Artwork" layout="intrinsic" width={1200} height={800} />
             <div className="bg-white w-full p-4">
               <h2 className="text-2xl font-bold text-gray-800 mb-2">{selectedArtwork.name}</h2>
               <p className="text-gray-600">{selectedArtwork.description}</p>
