@@ -41,11 +41,7 @@ const Landing = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-sky mb-8">Welcome to our Art Collection</h1>
-      <div className="w-full md:w-3/4 lg:w-1/2">
-        <button onClick={() => handleImageClick(artworks[0])}>
-          <Image src={artworks[0].image} alt={artworks[0].name} width={500} height={500} layout="responsive" className="w-full h-auto rounded-t-md" />
-        </button>
-      </div>
+      
       <div className="flex flex-wrap justify-center">
         {artworks.slice(1, 9).map((artwork: Artwork) => (
           <div key={artwork.name} className="m-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
